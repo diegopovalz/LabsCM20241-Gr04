@@ -1,2 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Labs20241-Gr04</string>
+    <string name="title_activity_personal_data">Información Personal</string>
+    <string name="title_activity_contact_data">Información de Contacto</string>
+    <string name="name">Nombres</string>
+    <string name="last_name">Apellidos</string>
+    <string name="gender">Sexo</string>
+    <string name="birth_date">Fecha de nacimiento</string>
+    <string name="scholar_grade">Grado de escolaridad</string>
+    <string name="female">Femenino</string>
+    <string name="male">Masculino</string>
+    <string name="elementary">Primaria</string>
+    <string name="secondary">Secundaria</string>
+    <string name="university">Universidad</string>
+    <string name="other">Otro</string>
+    <string name="change">Cambiar</string>
+    <string name="phone">Celular</string>
+    <string name="email">Email</string>
+    <string name="country">País</string>
+    <string name="city">Ciudad</string>
+    <string name="address">Dirección</string>
+    <string name="next">Siguiente</string>
+</resources>
