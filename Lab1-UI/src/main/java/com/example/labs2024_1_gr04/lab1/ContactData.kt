@@ -131,10 +131,9 @@ fun ContactDataScreen(navController: NavController) {
     ) {
         Button(
             onClick = {
-                /* if (phone.isNotEmpty() && email.isNotEmpty() && country.value.isNotEmpty()) {
+                if (phone.isNotEmpty() && email.isNotEmpty() && country.value.isNotEmpty()) {
                     navController.popBackStack()
-                } */
-                navController.navigate(route = Screens.PersonalDataScreen.route)
+                }
             },
             Modifier.padding(8.dp),
             colors = ButtonDefaults.buttonColors(),
