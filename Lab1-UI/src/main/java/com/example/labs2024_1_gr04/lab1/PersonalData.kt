@@ -1,4 +1,4 @@
-package com.example.labs20241_gr04.lab1
+package com.example.labs2024_1_gr04.lab1
 
 import android.app.DatePickerDialog
 import android.content.res.Configuration
@@ -54,13 +54,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavController
-import com.example.labs20241_gr04.lab1.navigation.Screens
+import com.example.labs2024_1_gr04.lab1.navigation.Screens
 import java.util.Calendar
 import java.util.Date
 
 @Composable
 fun PersonalDataScreen(navController: NavController) {
-    val title = stringResource(R.string.title_activity_personal_data)
+    val title = stringResource(id = R.string.title_activity_personal_data)
     val birthDateLabel = stringResource(id = R.string.birth_date)
     val scholarGradeLabel = stringResource(id = R.string.scholar_grade)
     var genderOptions = listOf(stringResource(R.string.female), stringResource(R.string.male))
