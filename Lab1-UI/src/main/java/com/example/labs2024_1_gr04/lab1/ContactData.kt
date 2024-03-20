@@ -1,6 +1,7 @@
 package com.example.labs2024_1_gr04.lab1
 
 import android.content.res.Configuration
+import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -74,6 +75,11 @@ import kotlinx.coroutines.launch
 @Composable
 fun ContactDataScreen(navController: NavController) {
     val title = stringResource(R.string.title_activity_contact_data)
+    val phoneLabel = stringResource(id = R.string.phone)
+    val addressLabel = stringResource(id = R.string.address)
+    val countryLabel = stringResource(id = R.string.country)
+    val cityLabel = stringResource(id = R.string.city)
+    val emailLabel = stringResource(id = R.string.email)
 
     var phone by rememberSaveable { mutableStateOf("") }
     var email by rememberSaveable { mutableStateOf("") }
@@ -131,6 +137,23 @@ fun ContactDataScreen(navController: NavController) {
     ) {
         Button(
             onClick = {
+                Log.i(
+                    "CONTACT_DATA_LOG",
+                    "$title: " +
+                            "\n$phoneLabel: $phone" +
+                            if (address.isNotEmpty()) {
+                                "\n$addressLabel: $address"
+                            } else {
+                                ""
+                            }
+                            + "\n$emailLabel: $email "
+                            + "\n$countryLabel: ${country.value}" +
+                            if (city.value.isNotEmpty()) {
+                                "\n$cityLabel: ${city.value}"
+                            } else {
+                                ""
+                            }
+                )
                 if (phone.isNotEmpty() && email.isNotEmpty() && country.value.isNotEmpty()) {
                     navController.popBackStack()
                 }

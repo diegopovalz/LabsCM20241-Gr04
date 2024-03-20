@@ -2,6 +2,7 @@ package com.example.labs2024_1_gr04.lab1
 
 import android.app.DatePickerDialog
 import android.content.res.Configuration
+import android.util.Log
 import android.widget.DatePicker
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -129,6 +130,22 @@ fun PersonalDataScreen(navController: NavController) {
     ) {
         Button(
             onClick = {
+                Log.i(
+                    "PERSONAL_DATA_LOG",
+                    "$title: " +
+                            "\n$name $lastName " +
+                            if (selectedOption.value.isNotEmpty()) {
+                                "\n${selectedOption.value}"
+                            } else {
+                                ""
+                            }
+                            + "\nNació el ${mDate.value} " +
+                            if (scholarSelectedItem.value.isNotEmpty()) {
+                                "\n${scholarSelectedItem.value}"
+                            } else {
+                                ""
+                            }
+                )
                 if (name.isNotEmpty() && lastName.isNotEmpty() && mDate.value != "$birthDateLabel*") {
                     name = ""
                     lastName = ""

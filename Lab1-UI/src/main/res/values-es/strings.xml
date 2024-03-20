@@ -21,4 +21,6 @@
     <string name="city">Ciudad</string>
     <string name="address">Dirección</string>
     <string name="next">Siguiente</string>
+    <string name="personal_data_log">Nombre: %s, Apellido: %s, Sexo: %s, Fecha nacimiento: %s, Grado escolaridad: %s</string>
+    <string name="contact_data_log">Telefono: %s, Dirección: %s, Email: %s, País: %s, Ciudad: %s</string>
 </resources>
