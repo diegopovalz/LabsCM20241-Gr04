@@ -99,10 +99,10 @@ fun ContactDataScreen(navController: NavController) {
                 ) {
                     Title(title)
                     Divider(color = Color.Gray, thickness = 1.dp)
-                    CountryField(country)
-                    CityField(city)
                     PhoneFiled(phone, onLastNameChange = { phone = it })
                     EmailFiled(email, onLastNameChange = { email = it })
+                    CountryField(country)
+                    CityField(city)
                     AddressField(address = address, onLastNameChange = { address = it })
                 }
             }
