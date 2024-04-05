@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -29,6 +30,7 @@ import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -228,33 +230,22 @@ fun TextFieldComponent (
     labelText: String,
     keyboardType: KeyboardType,
     required: Boolean = false,
+    capitalize: Boolean = true
 ) {
     Column{
-        Text(
-            modifier = Modifier.padding(start = 3.dp, bottom = 2.dp),
-            text = if (required) "$labelText*" else labelText,
-            fontSize = 15.sp,
-            color = Color.Gray,
-            fontWeight = FontWeight.Medium
-        )
-        TextField(
+        OutlinedTextField(
+            label = { Text(if (required) "$labelText*" else labelText) },
             value = text,
             maxLines = 1,
             keyboardOptions = KeyboardOptions(
                 keyboardType = keyboardType,
-                capitalization = KeyboardCapitalization.Words,
+                capitalization = if (capitalize) KeyboardCapitalization.Words else KeyboardCapitalization.None,
                 imeAction = ImeAction.Next
             ),
             onValueChange = onTextChange,
             modifier = Modifier
                 .width(250.dp)
-                .border(1.8.dp, Color.Gray, shape = RoundedCornerShape(15.dp)),
-            colors = TextFieldDefaults.textFieldColors(
-                containerColor = Color.Transparent,
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent,
-                cursorColor = Color.Gray
-            ),
+                .padding(5.dp),
             singleLine = true
         )
     }

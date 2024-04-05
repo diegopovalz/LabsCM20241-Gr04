@@ -203,7 +203,8 @@ fun EmailFiled(
             onTextChange = onLastNameChange,
             labelText = stringResource(R.string.email),
             keyboardType = KeyboardType.Email,
-            true
+            required = true,
+            capitalize = false
         )
     }
 }
